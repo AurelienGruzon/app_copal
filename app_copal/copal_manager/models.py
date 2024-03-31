@@ -3,6 +3,12 @@ from django.db import models
 # Create your models here.
 
 class Proprietaire(models.Model):
+
+    def __str__(self):
+        return self.nom + ", " + self.prenom
+
+    CHOICES = [('M', 'Monsieur'),('Mme', 'Madame')]
+    civilite = models.CharField(max_length=4, choices=CHOICES, default="M")
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
     telephone = models.CharField(max_length=20)
@@ -12,9 +18,14 @@ class Proprietaire(models.Model):
     ville = models.CharField(max_length=20)
 
 class Contrat(models.Model):
+
+    def __str__(self):
+        return self.numero_contrat + ": " + str(self.proprietaire)
+    
+    numero_contrat=models.CharField(max_length=5, blank = True)
     proprietaire = models.ForeignKey(Proprietaire, on_delete=models.CASCADE)
     date_debut = models.DateField()
-    date_fin = models.DateField()
+    date_fin = models.DateField(null = True, blank = True)
     frais_gestion = models.DecimalField(max_digits=10, decimal_places=2)
     # Autres champs pour les détails du contrat
 

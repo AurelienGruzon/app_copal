@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from copal_manager import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('liste-proprietaires/', views.liste_proprietaires, name = "liste-proprietaires"),
+    path('detail-proprietaires/<int:proprietaire_id>/', views.detail_proprietaire, name = "detail-proprietaire"),
+    path('create-proprietaires/', views.create_proprietaire, name = "create-proprietaire"),
+    path('liste-contrats/', views.liste_contrats, name = "liste-contrats"),
+    path('detail-contrat/<int:contrat_id>/', views.detail_contrat, name = "detail-contrat"),
+    path('create-contrat/', views.create_contrat, name = "create-contrat"),
+    path('liste-biens-immobiliers/', views.liste_biens_immobiliers, name = "liste-biens-immobiliers"),
+    path('detail-bien-immobilier/<int:bien_immobilier_id>/', views.detail_bien_immobilier, name = "detail-bien-immobilier"),
+    path('create-bien-immobilier/', views.create_bien_immobilier, name = "create-bien-immobilier"),
+    
 ]

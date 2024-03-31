@@ -1,0 +1,10 @@
+{% extends 'copal_manager/base.html' %}
+{% block content %}
+<h1>{{ proprietaire.civilite }} {{ proprietaire.nom }}, {{ proprietaire.prenom }}</h1>
+<ul>
+  <li>Telephone : {{ proprietaire.telephone }}</li>
+  <li>Email : {{ proprietaire.email }}</li>
+  <li>Adresse : {{ proprietaire.adresse }}, {{ proprietaire.code_postal }} {{ proprietaire.ville }}</li>
+</ul>
+
+{% endblock %}
