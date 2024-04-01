@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from copal_manager.models import Proprietaire, Contrat, BienImmobilier
+from copal_manager.forms import ProprietaireForm, ContratForm, BienImmobilierForm
+
 # Create your views here.
 def liste_proprietaires(request):
     proprietaires = Proprietaire.objects.all()
@@ -18,7 +20,8 @@ def create_proprietaire(request):
 def detail_proprietaire(request, proprietaire_id):
     proprietaire = Proprietaire.objects.get(id=proprietaire_id)
     contrats = Contrat.objects.filter(proprietaire=proprietaire)
-    context = { 'proprietaire': proprietaire, 'contrats': contrats}
+    biens_immobiliers = BienImmobilier.objects.filter(proprietaire=proprietaire)
+    context = { 'proprietaire': proprietaire, 'contrats': contrats, 'biens_immobiliers': biens_immobiliers}
     return render(request, 'copal_manager/detail-proprietaire.html', context)
 
 

@@ -9,12 +9,8 @@
     <nav>
       <ul class="menu">
       <li><a href="{% url 'liste-proprietaires' %}">Proprietaires</a></li>
-      <li><a href="{% url 'create-proprietaire' %}">Creer Proprietaire</a></li>
       <li><a href="{% url 'liste-contrats' %}">Contrats</a></li>
-      <li><a href="{% url 'create-contrat' %}">Creer Contrat</a></li>
       <li><a href="{% url 'liste-biens-immobiliers' %}">Biens Immo</a></li>
-      <li><a href="{% url 'create-bien-immobilier' %}">Créer bien immo</a></li>
-
     </nav>
  <div class="block_content">
       {% block content %} {% endblock %}

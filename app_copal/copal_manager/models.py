@@ -30,6 +30,10 @@ class Contrat(models.Model):
     # Autres champs pour les détails du contrat
 
 class BienImmobilier(models.Model):
+
+    def __str__(self):
+        return self.nom + "(" + str(self.proprietaire) + ")"
+    
     proprietaire = models.ForeignKey(Proprietaire, on_delete=models.CASCADE)
     nom = models.CharField(max_length=20)
     adresse = models.CharField(max_length=50)

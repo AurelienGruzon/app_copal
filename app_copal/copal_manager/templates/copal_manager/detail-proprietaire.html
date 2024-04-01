@@ -12,4 +12,11 @@
 <li><a href="{% url 'detail-contrat' contrat.id %}">{{ contrat }}</a></li>
 {% endfor %}
 </ul>
+<h2>Biens Immobiliers associés:</h2>
+<ul>
+{% for bien_immobilier in biens_immobiliers %}
+<li><a href="{% url 'detail-bien-immobilier' bien_immobilier.id %}">{{ bien_immobilier }}</a></li>
+{% endfor %}
+</ul>
+
 {% endblock %}
