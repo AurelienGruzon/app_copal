@@ -50,3 +50,32 @@ nav {
 .content {
   padding: 20px;
 }
+
+/* Styles CSS mis à jour */
+.contrat {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.logo {
+    width: 100px;
+    height: auto;
+}
+.parties_contrat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.partie {
+    width: 48%;
+}
+.contenu_contrat {
+    margin-bottom: 20px;
+}
+.signatures_contrat {
+    display: flex;
+    justify-content: space-between;
+}
+.signature {
+    width: 48%;
+}

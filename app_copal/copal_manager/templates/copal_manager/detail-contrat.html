@@ -1,6 +1,51 @@
 {% extends 'copal_manager/base.html' %}
+{% load static %}
 {% block content %}
 <h1>{{ contrat.numero_contrat }}: {{ contrat.proprietaire }}</h1>
-<p> ici doit se trouver le pdf du contrat </p>
+
+    <div class="contrat">
+        <!-- Logo -->
+        <img src="{% static './copal_manager/logo.png' %}" alt="Logo" class="logo">
+        
+        <!-- Parties -->
+        <div class="parties_contrat">
+            <div class="partie">
+                <h2>Prestataire:</h2>
+		<p>La Conciergerie Paloise, SARL au capital de 2000 euros, dont le siège social est situé au 4 rue Castetnau, 64000 PAU, enregistrée au Registre du Commerce et des Sociétés de PAU sous le numéro 979 409 786, SIRET 979 409 786 00014, tél : 06.72.41.14.97 ou 06.60.09.81.14, mail : contact@laconciergeriepaloise.com<p>
+		<p>ci-après dénommée « le Prestataire de services » ou « le Prestataire », d’une part,<p>
+
+		<!-- Contenu de la partie prestataire -->
+            </div>
+            <div class="partie">
+                <h2>Client:</h2>
+		<li>{{ proprietaire }}</li>
+		<li>{{ proprietaire.adresse }}</li>
+		<li>{{ proprietaire.code_postal }} {{ proprietaire.ville }}</li>
+		<p>ci-après dénommée « le Client », d’autre part,<p>
+		<!-- Contenu de la partie client -->
+            </div>
+        </div>
+        
+        <!-- Corps du contrat -->
+        <div class="contenu_contrat">
+            <h2>Corps du Contrat</h2>
+            
+	    <p></p>
+	    <p>contenu du contrat</p>
+        </div>
+        
+        <!-- Signatures -->
+        <div class="signatures_contrat">
+            <div class="signature">
+                <h2>Signature Prestataire</h2>
+                <!-- Zone de signature pour le prestataire -->
+            </div>
+            <div class="signature">
+                <h2>Signature Client</h2>
+                <!-- Zone de signature pour le client -->
+            </div>
+        </div>
+    </div>
+
 
 {% endblock %}

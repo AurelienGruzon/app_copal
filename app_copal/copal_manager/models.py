@@ -13,7 +13,7 @@ class Proprietaire(models.Model):
     prenom = models.CharField(max_length=50)
     telephone = models.CharField(max_length=20)
     email = models.EmailField()
-    addresse = models.CharField(max_length=50)
+    adresse = models.CharField(max_length=50)
     code_postal = models.CharField(max_length=10)
     ville = models.CharField(max_length=20)
 

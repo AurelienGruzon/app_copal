@@ -40,8 +40,10 @@ def create_contrat(request):
     return render(request, 'copal_manager/create-contrat.html', {'form': form})
 
 def detail_contrat(request, contrat_id):
+
     contrat = Contrat.objects.get(id=contrat_id)
-    return render(request, 'copal_manager/detail-contrat.html', {'contrat': contrat})
+    proprietaire = contrat.proprietaire
+    return render(request, 'copal_manager/detail-contrat.html', {'contrat': contrat, 'proprietaire': proprietaire})
 
 
 def liste_biens_immobiliers(request):
